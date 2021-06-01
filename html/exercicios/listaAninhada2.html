@@ -1,0 +1,49 @@
+<!-- Executar fora do index.html para ver o efeito -->
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span avm-pasta>backend</span> 
+        <ul>
+            <li>
+                <span avm-pasta>app</span> 
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span avm-pasta>config</span> 
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>            
+        </ul>
+    </li>
+    <li>
+        <span avm-pasta>frontend</span> 
+        <ul>
+            <li>
+                <span avm-pasta>public</span> 
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[avm-pasta]').forEach(pasta => {
+        pasta.onclick = function(e) {
+            const ul = pasta.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>

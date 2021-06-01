@@ -1,0 +1,7 @@
+/* estilo no id  */
+#textoPrincipal {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    background-color: chocolate;
+}

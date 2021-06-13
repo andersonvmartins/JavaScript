@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!--
+         essa abordagem não é interessante apesar de funcionar.
+         pq fica em hardcode
+        <a href="https://google.com.br" onclick="navegarEm5s(event)">Google</a> 
+        -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        function navegarEm5s(e) {
+            // preventDefault captura o evento
+            // nesse caso o click
+            e.preventDefault()
+            console.log('Saindo em 5 segundos')
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href
+            }, 5000)
+        }
+
+        // essa opção seria correta porém não fica claro
+        // no link que há um javascript associado ao elemento
+        //const a = document.querySelector('a')
+        //a.onclick = navegarEm5s
+
+        // colocar um atributo personalizado seria a
+        // melhor opção nesse caso
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarEm5s
+
+
+    </script>
+</body>
